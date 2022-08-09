@@ -4,10 +4,10 @@
 
 This is the AutoRest configuration file for ApplicationInsightsDataPlane.
 
-
-
 ---
+
 ## Getting Started
+
 To build the SDK for ApplicationInsightsDataPlane, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
@@ -15,6 +15,7 @@ To build the SDK for ApplicationInsightsDataPlane, simply [Install AutoRest](htt
 To see additional help and options, run:
 
 > `autorest --help`
+
 ---
 
 ## Configuration
@@ -28,9 +29,18 @@ title: ApplicationInsightsDataClient
 description: Composite Swagger for Application Insights Data Client
 add-credentials: true
 openapi-type: data-plane
-tag: v1
+tag: package-2022-08
 ```
 
+
+### Tag: package-2022-08
+
+These settings apply only when `--tag=package-2022-08` is specified on the command line.
+
+```yaml $(tag) == 'package-2022-08'
+input-file:
+  - Microsoft.Insights/stable/2022-08-01/swagger.json
+```
 ### Tag: v1
 
 These settings apply only when `--tag=v1` is specified on the command line.
@@ -88,11 +98,13 @@ directive:
     where: $.definitions.table.properties.rows.items.items.type
     transform: $ = "object"
 ```
+
 ``` yaml $(python) && $(python-mode) == 'update'
 python:
   no-namespace-folders: true
   output-folder: $(python-sdks-folder)/azure-applicationinsights-query/azure/applicationinsights/query
 ```
+
 ``` yaml $(python) && $(python-mode) == 'create'
 python:
   basic-setup-py: true
@@ -120,9 +132,9 @@ directive:
   - from: swagger-document
     where: $.definitions.table.properties.rows.items.items.type
     transform: $ = "object"
-  ```
+```
 
-## Multi-API/Profile support for AutoRest v3 generators 
+## Multi-API/Profile support for AutoRest v3 generators
 
 AutoRest V3 generators require the use of `--tag=all-api-versions` to select api files.
 
@@ -139,11 +151,10 @@ input-file:
 
 ```
 
-If there are files that should not be in the `all-api-versions` set, 
+If there are files that should not be in the `all-api-versions` set,
 uncomment the  `exclude-file` section below and add the file paths.
 
 ``` yaml $(tag) == 'all-api-versions'
 #exclude-file: 
 #  - $(this-folder)/Microsoft.Example/stable/2010-01-01/somefile.json
 ```
-
