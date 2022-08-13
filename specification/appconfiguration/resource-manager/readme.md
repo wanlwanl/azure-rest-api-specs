@@ -26,10 +26,18 @@ These are the global settings for the AppConfiguration API.
 
 ``` yaml
 openapi-type: arm
-
-tag: package-2022-05-01
+tag: package-2022-08
 ```
 
+
+### Tag: package-2022-08
+
+These settings apply only when `--tag=package-2022-08` is specified on the command line.
+
+```yaml $(tag) == 'package-2022-08'
+input-file:
+  - Microsoft.AppConfiguration/stable/2022-08-03/appconfiguration.json
+```
 ### Tag: package-2022-05-01
 
 These settings apply only when `--tag=2022-05-01` is specified on the command line.
@@ -187,6 +195,3 @@ directive:
     where: $.definitions.OperationDefinition.properties.isDataAction
     reason: This is a standardized ARM API.
 ```
-
-
-
