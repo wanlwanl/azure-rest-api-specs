@@ -1,0 +1,43 @@
+{
+  "per_resource_settings": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AppConfiguration/configurationStores/{configStoreName}": {
+      "producer_timing_delay": 0
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AppConfiguration/configurationStores/{configStoreName}/privateEndpointConnections/{privateEndpointConnectionName}": {
+      "producer_timing_delay": 0
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AppConfiguration/configurationStores/{configStoreName}/keyValues/{keyValueName}": {
+      "producer_timing_delay": 0
+    },
+    "/subscriptions/{subscriptionId}/providers/Microsoft.AppConfiguration/locations/{location}/deletedConfigurationStores/{configStoreName}/purge": {
+      "producer_timing_delay": 0
+    }
+  },
+  "max_combinations": 21,
+  "host": "test-proxy",
+  "target_port": 5000,
+  "disable_cert_validation": true,
+  "no_ssl": true,
+  "sequence_exploration_setting": {
+    "create_prefix_once": [
+      {
+        "methods": [
+          "GET",
+          "HEAD"
+        ],
+        "endpoints": "*",
+        "reset_after_success": false
+      },
+      {
+        "methods": [
+          "PUT",
+          "POST",
+          "PATCH",
+          "DELETE"
+        ],
+        "endpoints": "*",
+        "reset_after_success": true
+      }
+    ]
+  }
+}
