@@ -26,18 +26,29 @@ These are the global settings for the azureactivedirectory.
 
 ``` yaml
 openapi-type: arm
-tag: package-2020-03
+tag: package-2022-01
 ```
 
 
+### Tag: package-2022-01
+
+These settings apply only when `--tag=package-2022-01` is specified on the command line.
+
+```yaml $(tag) == 'package-2022-01'
+input-file:
+  - Microsoft.Aadiam/stable/2022-01-09/privateEndpointConnections.json
+  - Microsoft.Aadiam/stable/2022-01-09/privateLinkForAzureAD.json
+  - Microsoft.Aadiam/stable/2022-01-09/privateLinkResources.json
+```
 ### Tag: package-preview-2017-04
 
 These settings apply only when `--tag=package-preview-2017-04` is specified on the command line.
 
-```yaml $(tag) == 'package-preview-2017-04'
+``` yaml $(tag) == 'package-preview-2017-04'
 input-file:
   - Microsoft.Aadiam/preview/2017-04-01-preview/azureactivedirectory.json
 ```
+
 ### Tag: package-preview-2020-07
 
 These settings apply only when `--tag=package-preview-2020-07` is specified on the command line.
@@ -61,7 +72,7 @@ input-file:
 
 These settings apply only when `--tag=package-2020-03` is specified on the command line.
 
-```yaml $(tag) == 'package-2020-03'
+``` yaml $(tag) == 'package-2020-03'
 input-file:
   - Microsoft.Aadiam/stable/2020-03-01/privateLinkForAzureAD.json
   - Microsoft.Aadiam/stable/2020-03-01/privateLinkResources.json
