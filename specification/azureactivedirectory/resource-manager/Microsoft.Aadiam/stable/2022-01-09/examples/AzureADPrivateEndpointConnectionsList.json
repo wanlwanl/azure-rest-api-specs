@@ -2,7 +2,7 @@
   "parameters": {
     "policyName": "example-policy-5849",
     "resourceGroupName": "myResourceGroup",
-    "api-version": "2020-03-01",
+    "api-version": "2022-01-09",
     "subscriptionId": "ffffffff-ffff-ffff-ffff-ffffffffffff"
   },
   "responses": {
