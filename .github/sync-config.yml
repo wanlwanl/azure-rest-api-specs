@@ -1,7 +1,0 @@
-group:
-  repos: |
-    test-repo-billy/azure-rest-api-specs-pr@RPSaaSDev
-    test-repo-billy/azure-rest-api-specs-pr@RPSaaSMaster
-  files:
-    - source: specification/common-types/
-      dest: specification/common-types/
