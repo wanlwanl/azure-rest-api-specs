@@ -38,6 +38,15 @@ tag: package-preview-2022-08
 ```
 
 
+### Tag: package-preview-2022-08-only
+
+These settings apply only when `--tag=package-preview-2022-08-only` is specified on the command line.
+
+``` yaml $(tag) == 'package-preview-2022-08-only'
+input-file:
+  - Microsoft.ContainerService/preview/2022-08-02-preview/managedClusters.json
+```
+
 ### Tag: package-preview-2022-08
 
 These settings apply only when `--tag=package-preview-2022-08` is specified on the command line.
@@ -45,6 +54,7 @@ These settings apply only when `--tag=package-preview-2022-08` is specified on t
 ``` yaml $(tag) == 'package-preview-2022-08'
 input-file:
   - Microsoft.ContainerService/preview/2022-08-02-preview/managedClusters.json
+  - Microsoft.ContainerService/preview/2022-07-02-preview/fleets.json
 ```
 
 ### Tag: package-2022-07
