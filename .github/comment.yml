@@ -85,4 +85,9 @@
     onUnlabeledAddLabels:
         - WaitForARMFeedback
         - ARMReview
-
+- rule:
+    type: label
+    label: Approved-BreakingChange
+    booleanFilterExpression: "!(ARMSignedOff||ARMChangesRequested||Approved-OkToMerge||WaitForARMRevisit)&&ARMReview"
+    onLabeledAddLabels:
+        - WaitForARMFeedback
