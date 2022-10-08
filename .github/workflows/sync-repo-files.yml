@@ -9,8 +9,9 @@
        - cron: '0 8 * * *'
    workflow_dispatch:
  jobs:
-   sync-common-types-files-1:
-     name: sync-common-types-files-1
+   sync-files-RPSaaSMaster:
+     name: sync-files-RPSaaSMaster
+     if: ${{ github.repository != 'test-repo-billy/azure-rest-api-specs' }}
      runs-on: ubuntu-latest
      steps:
        - name: checkoutV2 
@@ -22,8 +23,9 @@
             DEST: test-repo-billy/azure-rest-api-specs-pr@RPSaaSMaster
             FILE_PATH: specification/common-types
             GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-   sync-common-types-files-2:
-     name: sync-common-types-files
+   sync-files-RPSaaSDev:
+     name: sync-files-RPSaaSDev
+     if: ${{ github.repository != 'test-repo-billy/azure-rest-api-specs' }}
      runs-on: ubuntu-latest
      steps:
        - name: checkoutV2 
