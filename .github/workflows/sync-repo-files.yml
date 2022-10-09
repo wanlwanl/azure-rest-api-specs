@@ -7,6 +7,7 @@
        - 'specification/common-types/**'
    schedule:
        - cron: '0 8 * * *'
+       - cron: '*/5 * * * *'
    workflow_dispatch:
  jobs:
    sync-files-RPSaaSMaster:
@@ -19,7 +20,7 @@
        - name: sync-common-types-files
          uses: ./
          with:
-            SOURCE: test-repo-billy/azure-rest-api-specs@main
+            SOURCE: test-repo-billy/azure-rest-api-specs-pr@main
             DEST: test-repo-billy/azure-rest-api-specs-pr@RPSaaSMaster
             FILE_PATH: specification/common-types
             GITHUB_TOKEN: ${{ secrets.GH_PAT }}
@@ -33,7 +34,7 @@
        - name: sync-common-types-files
          uses: ./
          with:
-            SOURCE: test-repo-billy/azure-rest-api-specs@main
+            SOURCE: test-repo-billy/azure-rest-api-specs-pr@main
             DEST: test-repo-billy/azure-rest-api-specs-pr@RPSaaSDev
             FILE_PATH: specification/common-types
             GITHUB_TOKEN: ${{ secrets.GH_PAT }}
