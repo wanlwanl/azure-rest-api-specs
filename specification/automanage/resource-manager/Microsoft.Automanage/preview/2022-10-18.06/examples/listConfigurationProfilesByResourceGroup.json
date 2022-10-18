@@ -2,7 +2,7 @@
   "parameters": {
     "subscriptionId": "mySubscriptionId",
     "resourceGroupName": "myResourceGroupName",
-    "api-version": "2021-04-30-preview"
+    "api-version": "2022-10-18.06"
   },
   "responses": {
     "200": {
