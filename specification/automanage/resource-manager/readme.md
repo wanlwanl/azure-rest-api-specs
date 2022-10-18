@@ -28,15 +28,23 @@ These are the global settings for the Automanage API.
 title: AutomanageClient
 description: Automanage Client
 openapi-type: arm
-tag: package-2022-05
+tag: package-preview-2022-10
 ```
 
 
+### Tag: package-preview-2022-10
+
+These settings apply only when `--tag=package-preview-2022-10` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2022-10'
+input-file:
+  - Microsoft.Automanage/preview/2022-10-18.06/automanage.json
+```
 ### Tag: package-2022-05
 
 These settings apply only when `--tag=package-2022-05` is specified on the command line.
 
-```yaml $(tag) == 'package-2022-05'
+``` yaml $(tag) == 'package-2022-05'
 input-file:
   - Microsoft.Automanage/stable/2022-05-04/automanage.json
 ```
