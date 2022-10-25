@@ -1,7 +1,7 @@
 {
   "parameters": {
     "instanceUrl": "https://instance.attest.azure.net",
-    "api-version": "2022-08-01",
+    "api-version": "2022-07-02",
     "attestationType": "SgxEnclave",
     "PolicyJws": "eyJhbGciOiJub25lIn0.."
   },

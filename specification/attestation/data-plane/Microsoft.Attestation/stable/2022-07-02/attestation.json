@@ -3,7 +3,7 @@
   "info": {
     "title": "AttestationClient",
     "description": "Describes the interface for the per-tenant enclave service.",
-    "version": "2022-08-01"
+    "version": "2022-07-02"
   },
   "x-ms-parameterized-host": {
     "hostTemplate": "{instanceUrl}",
@@ -1082,7 +1082,7 @@
       "in": "query",
       "required": true,
       "type": "string",
-      "description": "Client API version. Current version is 2022-08-01"
+      "description": "Client API version. Current version is 2022-07-02"
     },
     "AttestationType": {
       "description": "Specifies the trusted execution environment to be used to validate the evidence",
