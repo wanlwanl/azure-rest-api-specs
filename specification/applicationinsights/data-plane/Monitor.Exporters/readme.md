@@ -1,4 +1,5 @@
 # Exporter for Azure Monitor
+
 > see https://aka.ms/autorest
 
 ## Getting Started
@@ -28,21 +29,30 @@ version: 1.0.1-20170402
 
 These are the global settings for the schemaregistry.
 
-```yaml
+``` yaml
 openapi-type: data-plane
-tag: 2020-09-15-preview
+tag: package-preview-2022-10
 ```
 
+
+### Tag: package-preview-2022-10
+
+These settings apply only when `--tag=package-preview-2022-10` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2022-10'
+input-file:
+  - preview/2022-10-27/swagger.json
+```
 ### Tag: 2020-09-15-preview
 
 These settings apply only when `--tag=2020-09-15-preview` is specified on the command line.
 
-```yaml $(tag) == '2020-09-15-preview'
+``` yaml $(tag) == '2020-09-15-preview'
 input-file:
   - preview/2020-09-15_Preview/swagger.json
 ```
 
-```yaml
+``` yaml
 openapi-type: data-plane
 tag: v2.1
 ```
@@ -51,8 +61,7 @@ tag: v2.1
 
 These settings apply only when `--tag=v2.1` is specified on the command line.
 
-```yaml $(tag) == 'v2.1'
+``` yaml $(tag) == 'v2.1'
 input-file:
   - preview/v2.1/swagger.json
 ```
-
