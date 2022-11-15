@@ -28,15 +28,83 @@ These are the global settings for the Network API.
 title: NetworkManagementClient
 description: Network Client
 openapi-type: arm
-tag: package-2022-07
+tag: package-2022-11
 ```
 
 
+### Tag: package-2022-11
+
+These settings apply only when `--tag=package-2022-11` is specified on the command line.
+
+```yaml $(tag) == 'package-2022-11'
+input-file:
+  - Microsoft.Network/stable/2022-11-10/applicationGateway.json
+  - Microsoft.Network/stable/2022-11-10/applicationGatewayWafDynamicManifests.json
+  - Microsoft.Network/stable/2022-11-10/applicationSecurityGroup.json
+  - Microsoft.Network/stable/2022-11-10/availableDelegations.json
+  - Microsoft.Network/stable/2022-11-10/availableServiceAliases.json
+  - Microsoft.Network/stable/2022-11-10/azureFirewall.json
+  - Microsoft.Network/stable/2022-11-10/azureFirewallFqdnTag.json
+  - Microsoft.Network/stable/2022-11-10/azureWebCategory.json
+  - Microsoft.Network/stable/2022-11-10/bastionHost.json
+  - Microsoft.Network/stable/2022-11-10/checkDnsAvailability.json
+  - Microsoft.Network/stable/2022-11-10/cloudServiceNetworkInterface.json
+  - Microsoft.Network/stable/2022-11-10/cloudServicePublicIpAddress.json
+  - Microsoft.Network/stable/2022-11-10/cloudServiceSwap.json
+  - Microsoft.Network/stable/2022-11-10/customIpPrefix.json
+  - Microsoft.Network/stable/2022-11-10/ddosCustomPolicy.json
+  - Microsoft.Network/stable/2022-11-10/ddosProtectionPlan.json
+  - Microsoft.Network/stable/2022-11-10/dscpConfiguration.json
+  - Microsoft.Network/stable/2022-11-10/endpointService.json
+  - Microsoft.Network/stable/2022-11-10/expressRouteCircuit.json
+  - Microsoft.Network/stable/2022-11-10/expressRouteCrossConnection.json
+  - Microsoft.Network/stable/2022-11-10/expressRoutePort.json
+  - Microsoft.Network/stable/2022-11-10/expressRouteProviderPort.json
+  - Microsoft.Network/stable/2022-11-10/firewallPolicy.json
+  - Microsoft.Network/stable/2022-11-10/ipAllocation.json
+  - Microsoft.Network/stable/2022-11-10/ipGroups.json
+  - Microsoft.Network/stable/2022-11-10/loadBalancer.json
+  - Microsoft.Network/stable/2022-11-10/natGateway.json
+  - Microsoft.Network/stable/2022-11-10/network.json
+  - Microsoft.Network/stable/2022-11-10/networkInterface.json
+  - Microsoft.Network/stable/2022-11-10/networkManager.json
+  - Microsoft.Network/stable/2022-11-10/networkManagerActiveConfiguration.json
+  - Microsoft.Network/stable/2022-11-10/networkManagerConnection.json
+  - Microsoft.Network/stable/2022-11-10/networkManagerConnectivityConfiguration.json
+  - Microsoft.Network/stable/2022-11-10/networkManagerEffectiveConfiguration.json
+  - Microsoft.Network/stable/2022-11-10/networkManagerGroup.json
+  - Microsoft.Network/stable/2022-11-10/networkManagerScopeConnection.json
+  - Microsoft.Network/stable/2022-11-10/networkManagerSecurityAdminConfiguration.json
+  - Microsoft.Network/stable/2022-11-10/networkProfile.json
+  - Microsoft.Network/stable/2022-11-10/networkSecurityGroup.json
+  - Microsoft.Network/stable/2022-11-10/networkVirtualAppliance.json
+  - Microsoft.Network/stable/2022-11-10/networkWatcher.json
+  - Microsoft.Network/stable/2022-11-10/operation.json
+  - Microsoft.Network/stable/2022-11-10/privateEndpoint.json
+  - Microsoft.Network/stable/2022-11-10/privateLinkService.json
+  - Microsoft.Network/stable/2022-11-10/publicIpAddress.json
+  - Microsoft.Network/stable/2022-11-10/publicIpPrefix.json
+  - Microsoft.Network/stable/2022-11-10/routeFilter.json
+  - Microsoft.Network/stable/2022-11-10/routeTable.json
+  - Microsoft.Network/stable/2022-11-10/securityPartnerProvider.json
+  - Microsoft.Network/stable/2022-11-10/serviceCommunity.json
+  - Microsoft.Network/stable/2022-11-10/serviceEndpointPolicy.json
+  - Microsoft.Network/stable/2022-11-10/serviceTags.json
+  - Microsoft.Network/stable/2022-11-10/usage.json
+  - Microsoft.Network/stable/2022-11-10/virtualNetwork.json
+  - Microsoft.Network/stable/2022-11-10/virtualNetworkGateway.json
+  - Microsoft.Network/stable/2022-11-10/virtualNetworkTap.json
+  - Microsoft.Network/stable/2022-11-10/virtualRouter.json
+  - Microsoft.Network/stable/2022-11-10/virtualWan.json
+  - Microsoft.Network/stable/2022-11-10/vmssNetworkInterface.json
+  - Microsoft.Network/stable/2022-11-10/vmssPublicIpAddress.json
+  - Microsoft.Network/stable/2022-11-10/webapplicationfirewall.json
+```
 ### Tag: package-2022-07
 
 These settings apply only when `--tag=package-2022-07` is specified on the command line.
 
-```yaml $(tag) == 'package-2022-07'
+``` yaml $(tag) == 'package-2022-07'
 input-file:
   - Microsoft.Network/stable/2022-07-01/applicationGateway.json
   - Microsoft.Network/stable/2022-07-01/applicationGatewayWafDynamicManifests.json
@@ -100,6 +168,7 @@ input-file:
   - Microsoft.Network/stable/2022-07-01/vmssPublicIpAddress.json
   - Microsoft.Network/stable/2022-07-01/webapplicationfirewall.json
 ```
+
 ### Tag: package-2022-05
 
 These settings apply only when `--tag=package-2022-05` is specified on the command line.
