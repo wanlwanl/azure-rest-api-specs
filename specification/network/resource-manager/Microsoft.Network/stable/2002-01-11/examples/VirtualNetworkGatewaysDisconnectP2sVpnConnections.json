@@ -3,7 +3,7 @@
     "subscriptionId": "subid",
     "resourceGroupName": "vpn-gateway-test",
     "virtualNetworkGatewayName": "vpngateway",
-    "api-version": "2022-07-01",
+    "api-version": "2002-01-11",
     "request": {
       "vpnConnectionIds": [
         "vpnconnId1",
