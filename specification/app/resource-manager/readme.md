@@ -26,15 +26,38 @@ These are the global settings for the app.
 
 ``` yaml
 openapi-type: arm
-tag: package-2022-10
+tag: package-preview-2022-12
 ```
 
 
+### Tag: package-preview-2022-12
+
+These settings apply only when `--tag=package-preview-2022-12` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2022-12'
+input-file:
+  - Microsoft.App/preview/2022-12-20.02/AuthConfigs.json
+  - Microsoft.App/preview/2022-12-20.02/AvailableWorkloadProfiles.json
+  - Microsoft.App/preview/2022-12-20.02/BillingMeters.json
+  - Microsoft.App/preview/2022-12-20.02/CommonDefinitions.json
+  - Microsoft.App/preview/2022-12-20.02/ConnectedEnvironments.json
+  - Microsoft.App/preview/2022-12-20.02/ConnectedEnvironmentsCertificates.json
+  - Microsoft.App/preview/2022-12-20.02/ConnectedEnvironmentsDaprComponents.json
+  - Microsoft.App/preview/2022-12-20.02/ConnectedEnvironmentsStorages.json
+  - Microsoft.App/preview/2022-12-20.02/ContainerApps.json
+  - Microsoft.App/preview/2022-12-20.02/ContainerAppsRevisions.json
+  - Microsoft.App/preview/2022-12-20.02/Diagnostics.json
+  - Microsoft.App/preview/2022-12-20.02/Global.json
+  - Microsoft.App/preview/2022-12-20.02/ManagedEnvironments.json
+  - Microsoft.App/preview/2022-12-20.02/ManagedEnvironmentsDaprComponents.json
+  - Microsoft.App/preview/2022-12-20.02/ManagedEnvironmentsStorages.json
+  - Microsoft.App/preview/2022-12-20.02/SourceControls.json
+```
 ### Tag: package-2022-10
 
 These settings apply only when `--tag=package-2022-10` is specified on the command line.
 
-```yaml $(tag) == 'package-2022-10'
+``` yaml $(tag) == 'package-2022-10'
 input-file:
   - Microsoft.App/stable/2022-10-01/AuthConfigs.json
   - Microsoft.App/stable/2022-10-01/AvailableWorkloadProfiles.json
@@ -53,6 +76,7 @@ input-file:
   - Microsoft.App/stable/2022-10-01/ManagedEnvironmentsStorages.json
   - Microsoft.App/stable/2022-10-01/SourceControls.json
 ```
+
 ### Tag: package-preview-2022-06
 
 These settings apply only when `--tag=package-preview-2022-06` is specified on the command line.
