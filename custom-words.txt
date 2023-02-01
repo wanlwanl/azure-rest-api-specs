@@ -414,6 +414,7 @@ commandshistory
 commitmentplans
 Compat
 compilationjobs
+compilefile
 compositeentities
 computervision
 CONCURRENTAPPEND
@@ -1951,6 +1952,7 @@ smallmoney
 SMBIOS
 snapshotrun
 snapshotsdr
+snapshotset
 snaptshot
 SNAT
 SNMP
@@ -2154,6 +2156,7 @@ tilesetconfiguration
 tilesets
 timeasc
 timedesc
+Timedout
 timeframe
 timegrain
 timeseries
