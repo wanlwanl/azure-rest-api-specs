@@ -28,15 +28,70 @@ These are the global settings for the ApiManagement API.
 title: ApiManagementClient
 description: ApiManagement Client
 openapi-type: arm
-tag: package-preview-2023-03
+tag: package-preview-2023-11
 ```
 
 
+### Tag: package-preview-2023-11
+
+These settings apply only when `--tag=package-preview-2023-11` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2023-11'
+input-file:
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimanagement.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimapis.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimapisByTags.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimapiversionsets.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimauthorizationproviders.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimauthorizationservers.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimbackends.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimcaches.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimcertificates.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimconnectivitycheck.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimcontenttypes.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimdeletedservices.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimdeployment.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimdiagnostics.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimdocumentations.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimemailtemplates.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimgateways.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimgroups.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimidentityprovider.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimissues.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimloggers.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimnamedvalues.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimnetworkstatus.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimnotifications.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimopenidconnectproviders.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimoutbounddependency.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimpolicies.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimpolicydescriptions.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimpolicyfragments.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimportalconfigs.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimportalrevisions.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimportalsettings.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimprivatelink.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimproducts.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimproductsByTags.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimquotas.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimregions.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimreports.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimschema.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimsettings.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimskus.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimsubscriptions.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimtagresources.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimtags.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimtenant.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimusers.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/apimworkspaces.json
+  - Microsoft.ApiManagement/preview/2023-11-09-preview/definitions.json
+```
 ### Tag: package-preview-2023-03
 
 These settings apply only when `--tag=package-preview-2023-03` is specified on the command line.
 
-```yaml $(tag) == 'package-preview-2023-03'
+``` yaml $(tag) == 'package-preview-2023-03'
 input-file:
   - Microsoft.ApiManagement/preview/2023-03-01-preview/apimanagement.json
   - Microsoft.ApiManagement/preview/2023-03-01-preview/apimapis.json
@@ -87,6 +142,7 @@ input-file:
   - Microsoft.ApiManagement/preview/2023-03-01-preview/apimworkspaces.json
   - Microsoft.ApiManagement/preview/2023-03-01-preview/definitions.json
 ```
+
 ### Tag: package-preview-2022-09
 
 These settings apply only when `--tag=package-preview-2022-09` is specified on the command line.
