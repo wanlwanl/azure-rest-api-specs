@@ -51,6 +51,15 @@ tag: package-2023-03
 
 
 
+
+### Tag: package-2018-06
+
+These settings apply only when `--tag=package-2018-06` is specified on the command line.
+
+```yaml $(tag) == 'package-2018-06'
+input-file:
+  - Microsoft.AlertsManagement/stable/2018-06-06/AlertsManagement.json
+```
 ### Tag: package-preview-2023-08
 
 These settings apply only when `--tag=package-preview-2023-08` is specified on the command line.
