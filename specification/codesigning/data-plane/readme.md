@@ -24,16 +24,25 @@ For other options on installation see [Installing AutoRest](https://aka.ms/autor
 
 These are the global settings for the Azure.CodeSigning.
 
-```yaml
+``` yaml
 openapi-type: data-plane
-tag: 2023-06-15-preview
+tag: package-preview-2023-11
 ```
 
+
+### Tag: package-preview-2023-11
+
+These settings apply only when `--tag=package-preview-2023-11` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2023-11'
+input-file:
+  - Azure.CodeSigning/preview/2023-11-21/azure.codesigning.json
+```
 ### Tag: 2023-06-15-preview
 
 These settings apply only when `--tag=2023-06-15-preview` is specified on the command line.
 
-```yaml $(tag) == '2023-06-15-preview'
+``` yaml $(tag) == '2023-06-15-preview'
 input-file:
   - Azure.CodeSigning/preview/2023-06-15-preview/azure.codesigning.json
 ```
