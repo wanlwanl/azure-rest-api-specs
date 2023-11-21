@@ -3,7 +3,7 @@
   "info": {
     "title": "Hybrid Connectivity Management API",
     "description": "REST API for Hybrid Connectivity",
-    "version": "2021-10-06-preview"
+    "version": "2023-11-20"
   },
   "host": "management.azure.com",
   "schemes": [
