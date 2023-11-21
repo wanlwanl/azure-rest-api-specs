@@ -27,18 +27,27 @@ These are the global settings for the hybridconnectivity.
 ``` yaml
 openapi-type: arm
 openapi-subtype: rpaas
-tag: package-2023-03
+tag: package-preview-2023-11
 ```
 
 
+### Tag: package-preview-2023-11
+
+These settings apply only when `--tag=package-preview-2023-11` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2023-11'
+input-file:
+  - Microsoft.HybridConnectivity/preview/2023-11-20/hybridconnectivity.json
+```
 ### Tag: package-2023-03
 
 These settings apply only when `--tag=package-2023-03` is specified on the command line.
 
-```yaml $(tag) == 'package-2023-03'
+``` yaml $(tag) == 'package-2023-03'
 input-file:
   - Microsoft.HybridConnectivity/stable/2023-03-15/hybridconnectivity.json
 ```
+
 ### Tag: package-2021-10-06-preview
 
 These settings apply only when `--tag=package-2021-10-06-preview` is specified on the command line.
