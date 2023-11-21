@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Azure CodeSigning",
-    "version": "2023-06-15-preview",
+    "version": "2023-11-21",
     "description": "Azure CodeSigning is a service that provides managed code signing for all.",
     "x-typespec-generated": [
       {
@@ -647,7 +647,7 @@
       "type": "string",
       "description": "Versions info.",
       "enum": [
-        "2023-06-15-preview"
+        "2023-11-21"
       ],
       "x-ms-enum": {
         "name": "Versions",
@@ -655,8 +655,8 @@
         "values": [
           {
             "name": "v2023_06_15_preview",
-            "value": "2023-06-15-preview",
-            "description": "The 2023-06-15-preview version."
+            "value": "2023-11-21",
+            "description": "The 2023-11-21 version."
           }
         ]
       }

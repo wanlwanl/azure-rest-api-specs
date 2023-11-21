@@ -4,7 +4,7 @@
   "parameters": {
     "codeSigningAccountName": "YourAccountName",
     "certificateProfileName": "YourCertificateProfileName",
-    "api-version": "2023-06-15-preview"
+    "api-version": "2023-11-21"
   },
   "responses": {
     "200": {
