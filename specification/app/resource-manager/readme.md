@@ -26,15 +26,41 @@ These are the global settings for the app.
 
 ``` yaml
 openapi-type: arm
-tag: package-preview-2023-08
+tag: package-preview-2024-01
 ```
 
 
+### Tag: package-preview-2024-01
+
+These settings apply only when `--tag=package-preview-2024-01` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2024-01'
+input-file:
+  - Microsoft.App/preview/2024-01-01-preview/AuthConfigs.json
+  - Microsoft.App/preview/2024-01-01-preview/AvailableWorkloadProfiles.json
+  - Microsoft.App/preview/2024-01-01-preview/BillingMeters.json
+  - Microsoft.App/preview/2024-01-01-preview/CommonDefinitions.json
+  - Microsoft.App/preview/2024-01-01-preview/ConnectedEnvironments.json
+  - Microsoft.App/preview/2024-01-01-preview/ConnectedEnvironmentsCertificates.json
+  - Microsoft.App/preview/2024-01-01-preview/ConnectedEnvironmentsDaprComponents.json
+  - Microsoft.App/preview/2024-01-01-preview/ConnectedEnvironmentsStorages.json
+  - Microsoft.App/preview/2024-01-01-preview/ContainerApps.json
+  - Microsoft.App/preview/2024-01-01-preview/ContainerAppsRevisions.json
+  - Microsoft.App/preview/2024-01-01-preview/Diagnostics.json
+  - Microsoft.App/preview/2024-01-01-preview/Global.json
+  - Microsoft.App/preview/2024-01-01-preview/Jobs.json
+  - Microsoft.App/preview/2024-01-01-preview/ManagedEnvironments.json
+  - Microsoft.App/preview/2024-01-01-preview/ManagedEnvironmentsDaprComponents.json
+  - Microsoft.App/preview/2024-01-01-preview/ManagedEnvironmentsStorages.json
+  - Microsoft.App/preview/2024-01-01-preview/SourceControls.json
+  - Microsoft.App/preview/2024-01-01-preview/Subscriptions.json
+  - Microsoft.App/preview/2024-01-01-preview/Usages.json
+```
 ### Tag: package-preview-2023-08
 
 These settings apply only when `--tag=package-preview-2023-08` is specified on the command line.
 
-```yaml $(tag) == 'package-preview-2023-08'
+``` yaml $(tag) == 'package-preview-2023-08'
 input-file:
   - Microsoft.App/preview/2023-08-01-preview/AppResiliency.json
   - Microsoft.App/preview/2023-08-01-preview/AuthConfigs.json
@@ -77,6 +103,7 @@ directive:
       We are not using the common error response for these new resources to promote consistency 
       with the rest of the Microsoft.App RP, as it also doesn't use the common-types error.
 ```
+
 ### Tag: package-preview-2023-05
 
 These settings apply only when `--tag=package-preview-2023-05` is specified on the command line.
