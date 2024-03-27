@@ -1,7 +1,7 @@
 {
   "parameters": {
     "oauthProviderId": "JOHNDEERE",
-    "api-version": "2023-07-01-preview"
+    "api-version": "2024-01-01-preview"
   },
   "responses": {
     "204": {}

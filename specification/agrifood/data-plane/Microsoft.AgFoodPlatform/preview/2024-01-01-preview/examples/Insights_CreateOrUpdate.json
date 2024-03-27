@@ -5,7 +5,7 @@
     "insightId": "insightId",
     "resourceId": "farmId",
     "resourceType": "Farm",
-    "api-version": "2023-07-01-preview",
+    "api-version": "2024-01-01-preview",
     "insightData": {
       "modelVersion": "1.0",
       "insightStartDateTime": "2021-07-26T09:31:54.043Z",

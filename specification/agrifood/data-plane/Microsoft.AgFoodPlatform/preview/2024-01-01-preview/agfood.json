@@ -3,7 +3,7 @@
   "info": {
     "title": "Microsoft Azure Data Manager for Agriculture Data Plane Service",
     "description": "APIs documentation for Microsoft Azure Data Manager for Agriculture DataPlane Service.",
-    "version": "2023-07-01-preview"
+    "version": "2024-01-01-preview"
   },
   "paths": {
     "/application-data:search": {
