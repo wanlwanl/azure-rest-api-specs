@@ -30,12 +30,11 @@ To see additional help and options, run:
 
 These are the global settings for the Compute API.
 
-```yaml
+``` yaml
 title: ComputeManagementClient
 description: Compute Client
 openapi-type: arm
-tag: package-2023-07-03
-
+tag: package-preview-2024-01
 directive:
   - where:
       - $.definitions.VirtualMachine.properties
@@ -216,10 +215,10 @@ directive:
       - TrackedResourcePatchOperation
     reason: ACS service is deprecated so a PATCH endpoint won't be implemented
   - where:
-      - $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/cloudServices/{cloudServiceName}/roleInstances/{roleInstanceName}/remoteDesktopFile"].get
+      - '$.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/cloudServices/{cloudServiceName}/roleInstances/{roleInstanceName}/remoteDesktopFile"].get'
     suppress:
       - D5001
-    reason: The API response has binary format and file type which is valid Swagger format. However, the example must be a JSON file which does not support specifying this response format.
+    reason: 'The API response has binary format and file type which is valid Swagger format. However, the example must be a JSON file which does not support specifying this response format.'
   - where:
       - $.definitions.RestorePoint
     suppress:
@@ -238,7 +237,7 @@ directive:
       - common.json
   - suppress: XmsResourceInPutResponse
     from: virtualMachineScaleSet.json
-    reason: x-ms-azure-resource tag makes 'ID' property required. However, VmssExtension is part of the VMSS property, not necessary a resource. So it does not always have ID.
+    reason: 'x-ms-azure-resource tag makes ''ID'' property required. However, VmssExtension is part of the VMSS property, not necessary a resource. So it does not always have ID.'
   - suppress: ResourceNameRestriction
     from: virtualMachineScaleSet.json
     reason: there is no VMSS naming requirement. It only follows ARM resource naming requirement.
@@ -246,7 +245,7 @@ directive:
     from: virtualMachine.json
     reason: there is no Compute VM naming requirement. It only follows ARM resource naming requirement.
   - suppress: ArmResourcePropertiesBag
-    reason: This was an existing definition. Too much impact to go through breaking change to address this. 
+    reason: This was an existing definition. Too much impact to go through breaking change to address this.
     from: virtualMachineScaleSet.json
     where:
       - $.definitions.VirtualMachineScaleSetVMExtension
@@ -257,6 +256,28 @@ directive:
     reason: there is no dedicated host naming requirement. It only follows ARM resource naming requirement.
 ```
 
+
+### Tag: package-preview-2024-01
+
+These settings apply only when `--tag=package-preview-2024-01` is specified on the command line.
+
+```yaml $(tag) == 'package-preview-2024-01'
+input-file:
+  - Microsoft.Compute/ComputeRP/preview/2024-01-01/availabilitySet.json
+  - Microsoft.Compute/ComputeRP/preview/2024-01-01/capacityReservation.json
+  - Microsoft.Compute/ComputeRP/preview/2024-01-01/computeRPCommon.json
+  - Microsoft.Compute/ComputeRP/preview/2024-01-01/dedicatedHost.json
+  - Microsoft.Compute/ComputeRP/preview/2024-01-01/image.json
+  - Microsoft.Compute/ComputeRP/preview/2024-01-01/logAnalytic.json
+  - Microsoft.Compute/ComputeRP/preview/2024-01-01/proximityPlacementGroup.json
+  - Microsoft.Compute/ComputeRP/preview/2024-01-01/restorePoint.json
+  - Microsoft.Compute/ComputeRP/preview/2024-01-01/runCommand.json
+  - Microsoft.Compute/ComputeRP/preview/2024-01-01/sshPublicKey.json
+  - Microsoft.Compute/ComputeRP/preview/2024-01-01/virtualMachine.json
+  - Microsoft.Compute/ComputeRP/preview/2024-01-01/virtualMachineExtensionImage.json
+  - Microsoft.Compute/ComputeRP/preview/2024-01-01/virtualMachineImage.json
+  - Microsoft.Compute/ComputeRP/preview/2024-01-01/virtualMachineScaleSet.json
+```
 ### Tag: package-2023-07-03
 
 These settings apply only when `--tag=package-2023-07-03` is specified on the command line.
@@ -296,7 +317,7 @@ input-file:
 
 These settings apply only when `--tag=package-2023-07-03-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2023-07-03-only'
+``` yaml $(tag) == 'package-2023-07-03-only'
 input-file:
   - Microsoft.Compute/common-types/v1/common.json
   - Microsoft.Compute/GalleryRP/stable/2023-07-03/galleryRPCommon.json
@@ -344,7 +365,7 @@ input-file:
 
 These settings apply only when `--tag=package-2023-10-02-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2023-10-02-only'
+``` yaml $(tag) == 'package-2023-10-02-only'
 input-file:
   - Microsoft.Compute/common-types/v1/common.json
   - Microsoft.Compute/DiskRP/stable/2023-10-02/diskRPCommon.json
@@ -394,7 +415,7 @@ input-file:
 
 These settings apply only when `--tag=package-2023-09-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2023-09-01-only'
+``` yaml $(tag) == 'package-2023-09-01-only'
 input-file:
   - Microsoft.Compute/common-types/v1/common.json
   - Microsoft.Compute/ComputeRP/stable/2023-09-01/computeRPCommon.json
@@ -452,7 +473,7 @@ input-file:
 
 These settings apply only when `--tag=package-2022-08-03-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2022-08-03-only'
+``` yaml $(tag) == 'package-2022-08-03-only'
 input-file:
   - Microsoft.Compute/common-types/v1/common.json
   - Microsoft.Compute/GalleryRP/stable/2022-08-03/galleryRPCommon.json
@@ -500,7 +521,7 @@ input-file:
 
 These settings apply only when `--tag=package-2023-07-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2023-07-01-only'
+``` yaml $(tag) == 'package-2023-07-01-only'
 input-file:
   - Microsoft.Compute/common-types/v1/common.json
   - Microsoft.Compute/ComputeRP/stable/2023-07-01/computeRPCommon.json
@@ -558,7 +579,7 @@ input-file:
 
 These settings apply only when `--tag=package-2023-04-02-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2023-04-02-only'
+``` yaml $(tag) == 'package-2023-04-02-only'
 input-file:
   - Microsoft.Compute/common-types/v1/common.json
   - Microsoft.Compute/DiskRP/stable/2023-04-02/diskRPCommon.json
@@ -608,7 +629,7 @@ input-file:
 
 These settings apply only when `--tag=package-2023-01-02-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2023-01-02-only'
+``` yaml $(tag) == 'package-2023-01-02-only'
 input-file:
   - Microsoft.Compute/common-types/v1/common.json
   - Microsoft.Compute/DiskRP/stable/2023-01-02/diskRPCommon.json
@@ -658,7 +679,7 @@ input-file:
 
 These settings apply only when `--tag=package-2023-03-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2023-03-01-only'
+``` yaml $(tag) == 'package-2023-03-01-only'
 input-file:
   - Microsoft.Compute/common-types/v1/common.json
   - Microsoft.Compute/ComputeRP/stable/2023-03-01/computeRPCommon.json
@@ -676,8 +697,6 @@ input-file:
   - Microsoft.Compute/ComputeRP/stable/2023-03-01/logAnalytic.json
   - Microsoft.Compute/ComputeRP/stable/2023-03-01/runCommand.json 
 ```
-
-
 
 ### Tag: package-2022-11-01
 
@@ -718,7 +737,7 @@ input-file:
 
 These settings apply only when `--tag=package-2022-11-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2022-11-01-only'
+``` yaml $(tag) == 'package-2022-11-01-only'
 input-file:
   - Microsoft.Compute/common-types/v1/common.json
   - Microsoft.Compute/ComputeRP/stable/2022-11-01/computeRPCommon.json
@@ -776,7 +795,7 @@ input-file:
 
 These settings apply only when `--tag=package-2022-09-04-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2022-09-04-only'
+``` yaml $(tag) == 'package-2022-09-04-only'
 input-file:
   - Microsoft.Compute/common-types/v1/common.json
   - Microsoft.Compute/CloudserviceRP/stable/2022-09-04/cloudService.json
@@ -821,7 +840,7 @@ input-file:
 
 These settings apply only when `--tag=package-2022-03-03-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2022-03-03-only'
+``` yaml $(tag) == 'package-2022-03-03-only'
 input-file:
   - Microsoft.Compute/common-types/v1/common.json
   - Microsoft.Compute/GalleryRP/stable/2022-03-03/galleryRPCommon.json
@@ -886,13 +905,13 @@ input-file:
 - Microsoft.Compute/ComputeRP/stable/2022-08-01/capacityReservation.json
 - Microsoft.Compute/ComputeRP/stable/2022-08-01/logAnalytic.json
 - Microsoft.Compute/ComputeRP/stable/2022-08-01/runCommand.json 
-``` 
+```
 
 ### Tag: package-2022-07-02
 
 These settings apply only when `--tag=package-2022-07-02` is specified on the command line.
 
-```yaml $(tag) == 'package-2022-07-02'
+``` yaml $(tag) == 'package-2022-07-02'
 input-file:
   - Microsoft.Compute/common-types/v1/common.json
   - Microsoft.Compute/ComputeRP/stable/2022-03-01/computeRPCommon.json
@@ -927,7 +946,7 @@ input-file:
 
 These settings apply only when `--tag=package-2022-07-02-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2022-07-02-only'
+``` yaml $(tag) == 'package-2022-07-02-only'
 input-file:
   - Microsoft.Compute/common-types/v1/common.json
   - Microsoft.Compute/DiskRP/stable/2022-07-02/diskRPCommon.json
@@ -942,7 +961,7 @@ input-file:
 
 These settings apply only when `--tag=package-2022-04-04` is specified on the command line.
 
-```yaml $(tag) == 'package-2022-04-04'
+``` yaml $(tag) == 'package-2022-04-04'
 input-file:
   - Microsoft.Compute/CloudserviceRP/stable/2022-04-04/common.json
   - Microsoft.Compute/ComputeRP/stable/2022-03-01/computeRPCommon.json
@@ -977,7 +996,7 @@ input-file:
 
 These settings apply only when `--tag=package-2022-04-04-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2022-04-04-only'
+``` yaml $(tag) == 'package-2022-04-04-only'
 input-file:
   - Microsoft.Compute/CloudserviceRP/stable/2022-04-04/common.json
   - Microsoft.Compute/CloudserviceRP/stable/2022-04-04/cloudService.json
@@ -987,7 +1006,7 @@ input-file:
 
 These settings apply only when `--tag=package-2022-03-02` is specified on the command line.
 
-```yaml $(tag) == 'package-2022-03-02'
+``` yaml $(tag) == 'package-2022-03-02'
 input-file:
   - Microsoft.Compute/DiskRP/stable/2022-03-02/common.json
   - Microsoft.Compute/ComputeRP/stable/2022-03-01/computeRPCommon.json
@@ -1022,7 +1041,7 @@ input-file:
 
 These settings apply only when `--tag=package-2022-03-02-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2022-03-02-only'
+``` yaml $(tag) == 'package-2022-03-02-only'
 input-file:
   - Microsoft.Compute/DiskRP/stable/2022-03-02/common.json
   - Microsoft.Compute/DiskRP/stable/2022-03-02/diskRPCommon.json
@@ -1037,7 +1056,7 @@ input-file:
 
 These settings apply only when `--tag=package-2022-01-03` is specified on the command line.
 
-```yaml $(tag) == 'package-2022-01-03'
+``` yaml $(tag) == 'package-2022-01-03'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2022-03-01/computeRPCommon.json
   - Microsoft.Compute/ComputeRP/stable/2022-03-01/virtualMachineScaleSet.json
@@ -1067,7 +1086,7 @@ input-file:
 
 These settings apply only when `--tag=package-2022-01-03-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2022-01-03-only'
+``` yaml $(tag) == 'package-2022-01-03-only'
 input-file:
   - Microsoft.Compute/GalleryRP/stable/2022-01-03/common.json
   - Microsoft.Compute/GalleryRP/stable/2022-01-03/galleryRPCommon.json
@@ -1080,7 +1099,7 @@ input-file:
 
 These settings apply only when `--tag=package-2022-03-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2022-03-01'
+``` yaml $(tag) == 'package-2022-03-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2022-03-01/common.json
   - Microsoft.Compute/ComputeRP/stable/2022-03-01/computeRPCommon.json
@@ -1109,7 +1128,7 @@ input-file:
 
 These settings apply only when `--tag=package-2022-03-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2022-03-01-only'
+``` yaml $(tag) == 'package-2022-03-01-only'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2022-03-01/common.json
   - Microsoft.Compute/ComputeRP/stable/2022-03-01/computeRPCommon.json
@@ -1132,7 +1151,7 @@ input-file:
 
 These settings apply only when `--tag=package-2021-12-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-12-01'
+``` yaml $(tag) == 'package-2021-12-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2021-11-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2021-11-01/runCommands.json
@@ -1148,7 +1167,7 @@ input-file:
 
 These settings apply only when `--tag=package-2021-12-01-oly` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-12-01-only'
+``` yaml $(tag) == 'package-2021-12-01-only'
 input-file:
   - Microsoft.Compute/DiskRP/stable/2021-12-01/disk.json
 ```
@@ -1157,7 +1176,7 @@ input-file:
 
 These settings apply only when `--tag=package-2021-11-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-11-01'
+``` yaml $(tag) == 'package-2021-11-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2021-11-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2021-11-01/runCommands.json
@@ -1173,7 +1192,7 @@ input-file:
 
 These settings apply only when `--tag=package-2021-11-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-11-01-only'
+``` yaml $(tag) == 'package-2021-11-01-only'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2021-11-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2021-11-01/runCommands.json
@@ -1183,7 +1202,7 @@ input-file:
 
 These settings apply only when `--tag=package-2021-08-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-08-01-only'
+``` yaml $(tag) == 'package-2021-08-01-only'
 input-file:
   - Microsoft.Compute/DiskRP/stable/2021-08-01/disk.json
 ```
@@ -1192,7 +1211,7 @@ input-file:
 
 These settings apply only when `--tag=package-2021-08-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-08-01'
+``` yaml $(tag) == 'package-2021-08-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2021-07-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2021-07-01/runCommands.json
@@ -1208,7 +1227,7 @@ input-file:
 
 These settings apply only when `--tag=package-2021-10-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-10-01'
+``` yaml $(tag) == 'package-2021-10-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2021-07-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2021-07-01/runCommands.json
@@ -1224,7 +1243,7 @@ input-file:
 
 These settings apply only when `--tag=package-2021-10-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-10-01-only'
+``` yaml $(tag) == 'package-2021-10-01-only'
 input-file:
   - Microsoft.Compute/GalleryRP/stable/2021-10-01/gallery.json
 ```
@@ -1233,7 +1252,7 @@ input-file:
 
 These settings apply only when `--tag=package-2021-07-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-07-01'
+``` yaml $(tag) == 'package-2021-07-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2021-07-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2021-07-01/runCommands.json
@@ -1249,7 +1268,7 @@ input-file:
 
 These settings apply only when `--tag=package-2021-07-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-07-01-only'
+``` yaml $(tag) == 'package-2021-07-01-only'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2021-07-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2021-07-01/runCommands.json
@@ -1263,7 +1282,7 @@ input-file:
 
 These settings apply only when `--tag=2021-06-01-preview` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-06-01-preview'
+``` yaml $(tag) == 'package-2021-06-01-preview'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2021-11-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2021-11-01/runCommands.json
@@ -1280,7 +1299,7 @@ input-file:
 
 These settings apply only when `--tag=package-2021-06-01-preview-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-06-01-preview-only'
+``` yaml $(tag) == 'package-2021-06-01-preview-only'
 input-file:
   - Microsoft.Compute/DiagnosticRP/preview/2021-06-01-preview/diagnostic.json
 ```
@@ -1289,7 +1308,7 @@ input-file:
 
 These settings apply only when `--tag=package-2021-04-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-04-01'
+``` yaml $(tag) == 'package-2021-04-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2021-04-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2021-04-01/runCommands.json
@@ -1304,7 +1323,7 @@ input-file:
 
 These settings apply only when `--tag=package-2021-04-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-04-01-only'
+``` yaml $(tag) == 'package-2021-04-01-only'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2021-04-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2021-04-01/runCommands.json
@@ -1315,7 +1334,7 @@ input-file:
 
 These settings apply only when `--tag=package-2021-03-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-03-01'
+``` yaml $(tag) == 'package-2021-03-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2021-03-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2021-03-01/runCommands.json
@@ -1330,7 +1349,7 @@ input-file:
 
 These settings apply only when `--tag=package-2021-03-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2021-03-01-only'
+``` yaml $(tag) == 'package-2021-03-01-only'
 input-file:
   - Microsoft.Compute/CloudserviceRP/stable/2021-03-01/cloudService.json
   - Microsoft.Compute/ComputeRP/stable/2021-03-01/compute.json
@@ -1341,7 +1360,7 @@ input-file:
 
 These settings apply only when `--tag=package-2020-12-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2020-12-01'
+``` yaml $(tag) == 'package-2020-12-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2020-12-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2020-12-01/runCommands.json
@@ -1354,7 +1373,7 @@ input-file:
 
 These settings apply only when `--tag=package-2020-12-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2020-12-01-only'
+``` yaml $(tag) == 'package-2020-12-01-only'
 input-file:
   - Microsoft.Compute/DiskRP/stable/2020-12-01/disk.json
   - Microsoft.Compute/ComputeRP/stable/2020-12-01/compute.json
@@ -1365,7 +1384,7 @@ input-file:
 
 These settings apply only when `--tag=package-2020-10-01-preview` is specified on the command line.
 
-```yaml $(tag) == 'package-2020-10-01-preview'
+``` yaml $(tag) == 'package-2020-10-01-preview'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2020-06-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2020-06-01/runCommands.json
@@ -1380,7 +1399,7 @@ input-file:
 
 These settings apply only when `--tag=package-2020-10-01-preview-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2020-10-01-preview-only'
+``` yaml $(tag) == 'package-2020-10-01-preview-only'
 input-file:
   - Microsoft.Compute/CloudserviceRP/preview/2020-10-01-preview/cloudService.json
 ```
@@ -1389,7 +1408,7 @@ input-file:
 
 These settings apply only when `--tag=package-2020-09-30` is specified on the command line.
 
-```yaml $(tag) == 'package-2020-09-30'
+``` yaml $(tag) == 'package-2020-09-30'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2020-06-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2020-06-01/runCommands.json
@@ -1404,7 +1423,7 @@ input-file:
 
 These settings apply only when `--tag=package-2020-09-30-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2020-09-30-only'
+``` yaml $(tag) == 'package-2020-09-30-only'
 input-file:
   - Microsoft.Compute/DiskRP/stable/2020-09-30/disk.json
   - Microsoft.Compute/GalleryRP/preview/2020-09-30/gallery.json
@@ -1415,7 +1434,7 @@ input-file:
 
 These settings apply only when `--tag=package-2020-06-30` is specified on the command line.
 
-```yaml $(tag) == 'package-2020-06-30'
+``` yaml $(tag) == 'package-2020-06-30'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2020-06-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2020-06-01/runCommands.json
@@ -1429,7 +1448,7 @@ input-file:
 
 These settings apply only when `--tag=package-2020-06-30-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2020-06-30-only'
+``` yaml $(tag) == 'package-2020-06-30-only'
 input-file:
   - Microsoft.Compute/DiskRP/stable/2020-06-30/disk.json
 ```
@@ -1438,7 +1457,7 @@ input-file:
 
 These settings apply only when `--tag=package-2020-06-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2020-06-01'
+``` yaml $(tag) == 'package-2020-06-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2020-06-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2020-06-01/runCommands.json
@@ -1452,7 +1471,7 @@ input-file:
 
 These settings apply only when `--tag=package-2020-06-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2020-06-01-only'
+``` yaml $(tag) == 'package-2020-06-01-only'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2020-06-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2020-06-01/runCommands.json
@@ -1462,7 +1481,7 @@ input-file:
 
 These settings apply only when `--tag=package-2020-05-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2020-05-01'
+``` yaml $(tag) == 'package-2020-05-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2019-12-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2019-12-01/runCommands.json
@@ -1476,7 +1495,7 @@ input-file:
 
 These settings apply only when `--tag=package-2020-05-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2020-05-01-only'
+``` yaml $(tag) == 'package-2020-05-01-only'
 input-file:
   - Microsoft.Compute/DiskRP/stable/2020-05-01/disk.json
 ```
@@ -1485,7 +1504,7 @@ input-file:
 
 These settings apply only when `--tag=package-2019-12-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2019-12-01'
+``` yaml $(tag) == 'package-2019-12-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2019-12-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2019-12-01/runCommands.json
@@ -1499,7 +1518,7 @@ input-file:
 
 These settings apply only when `--tag=package-2019-12-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2019-12-01-only'
+``` yaml $(tag) == 'package-2019-12-01-only'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2019-12-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2019-12-01/runCommands.json
@@ -1510,7 +1529,7 @@ input-file:
 
 These settings apply only when `--package-2019-11-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2019-11-01'
+``` yaml $(tag) == 'package-2019-11-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2019-07-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2019-07-01/runCommands.json
@@ -1524,7 +1543,7 @@ input-file:
 
 These settings apply only when `--package-2019-11-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2019-11-01-only'
+``` yaml $(tag) == 'package-2019-11-01-only'
 input-file:
   - Microsoft.Compute/DiskRP/stable/2019-11-01/disk.json
 ```
@@ -1533,7 +1552,7 @@ input-file:
 
 These settings apply only when `--tag=package-2019-07` is specified on the command line.
 
-```yaml $(tag) == 'package-2019-07'
+``` yaml $(tag) == 'package-2019-07'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2019-07-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2019-07-01/runCommands.json
@@ -1547,7 +1566,7 @@ input-file:
 
 These settings apply only when `--tag=package-2019-07-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2019-07-01'
+``` yaml $(tag) == 'package-2019-07-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2019-03-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2019-03-01/runCommands.json
@@ -1561,7 +1580,7 @@ input-file:
 
 These settings apply only when `--tag=package-2019-07-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2019-07-01-only'
+``` yaml $(tag) == 'package-2019-07-01-only'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2019-07-01/compute.json
   - Microsoft.Compute/DiskRP/stable/2019-07-01/disk.json
@@ -1573,7 +1592,7 @@ input-file:
 
 These settings apply only when `--tag=package-2019-03-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2019-03-01'
+``` yaml $(tag) == 'package-2019-03-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2019-03-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2019-03-01/runCommands.json
@@ -1587,7 +1606,7 @@ input-file:
 
 These settings apply only when `--tag=package-2019-04-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2019-04-01-only'
+``` yaml $(tag) == 'package-2019-04-01-only'
 input-file:
   - Microsoft.Compute/Skus/stable/2019-04-01/skus.json
 ```
@@ -1596,7 +1615,7 @@ input-file:
 
 These settings apply only when `--tag=package-2019-03-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2019-03-01-only'
+``` yaml $(tag) == 'package-2019-03-01-only'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2019-03-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2019-03-01/runCommands.json
@@ -1608,7 +1627,7 @@ input-file:
 
 These settings apply only when `--tag=package-2018-10-01-Disks` is specified on the command line.
 
-```yaml $(tag) == 'package-2018-10-01-Disks'
+``` yaml $(tag) == 'package-2018-10-01-Disks'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2018-10-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2018-10-01/runCommands.json
@@ -1622,7 +1641,7 @@ input-file:
 
 These settings apply only when `--tag=package-2018-10-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2018-10-01'
+``` yaml $(tag) == 'package-2018-10-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2018-10-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2018-10-01/runCommands.json
@@ -1636,7 +1655,7 @@ input-file:
 
 These settings apply only when `--tag=package-2018-10-01-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2018-10-01-only'
+``` yaml $(tag) == 'package-2018-10-01-only'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2018-10-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2018-10-01/runCommands.json
@@ -1646,7 +1665,7 @@ input-file:
 
 These settings apply only when `--tag=package-2018-09-30-only` is specified on the command line.
 
-```yaml $(tag) == 'package-2018-09-30-only'
+``` yaml $(tag) == 'package-2018-09-30-only'
 input-file:
   - Microsoft.Compute/DiskRP/stable/2018-09-30/disk.json
 ```
@@ -1655,7 +1674,7 @@ input-file:
 
 These settings apply only when `--tag=package-2018-06-exclude-gallery` is specified on the command line.
 
-```yaml $(tag) == 'package-2018-06-exclude-gallery'
+``` yaml $(tag) == 'package-2018-06-exclude-gallery'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2018-06-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2018-06-01/runCommands.json
@@ -1668,7 +1687,7 @@ input-file:
 
 These settings apply only when `--tag=package-2018-06` is specified on the command line.
 
-```yaml $(tag) == 'package-2018-06'
+``` yaml $(tag) == 'package-2018-06'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2018-06-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2018-06-01/runCommands.json
@@ -1682,7 +1701,7 @@ input-file:
 
 These settings apply only when `--tag=package-2018-06-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2018-06-01'
+``` yaml $(tag) == 'package-2018-06-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2018-04-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2018-04-01/runCommands.json
@@ -1696,7 +1715,7 @@ input-file:
 
 These settings apply only when `--tag=package-compute-only-2018-06` is specified on the command line.
 
-```yaml $(tag) == 'package-compute-only-2018-06'
+``` yaml $(tag) == 'package-compute-only-2018-06'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2018-06-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2018-06-01/runCommands.json
@@ -1708,7 +1727,7 @@ input-file:
 
 These settings apply only when `--tag=package-2018-04-01` is specified on the command line.
 
-```yaml $(tag) == 'package-2018-04-01'
+``` yaml $(tag) == 'package-2018-04-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2018-04-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2018-04-01/runCommands.json
@@ -1721,7 +1740,7 @@ input-file:
 
 These settings apply only when `--tag=package-2018-04` is specified on the command line.
 
-```yaml $(tag) == 'package-2018-04'
+``` yaml $(tag) == 'package-2018-04'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2017-12-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2017-12-01/runCommands.json
@@ -1734,7 +1753,7 @@ input-file:
 
 These settings apply only when `--tag=package-compute-2018-04` is specified on the command line.
 
-```yaml $(tag) == 'package-compute-2018-04'
+``` yaml $(tag) == 'package-compute-2018-04'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2018-04-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2018-04-01/runCommands.json
@@ -1745,7 +1764,7 @@ input-file:
 
 These settings apply only when `--tag=package-disks-2018-04` is specified on the command line.
 
-```yaml $(tag) == 'package-disks-2018-04'
+``` yaml $(tag) == 'package-disks-2018-04'
 input-file:
   - Microsoft.Compute/DiskRP/stable/2018-04-01/disk.json
 ```
@@ -1754,7 +1773,7 @@ input-file:
 
 These settings apply only when `--tag=package-2017-12` is specified on the command line.
 
-```yaml $(tag) == 'package-2017-12'
+``` yaml $(tag) == 'package-2017-12'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2017-12-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2017-12-01/runCommands.json
@@ -1767,7 +1786,7 @@ input-file:
 
 These settings apply only when `--tag=package-compute-2017-12` is specified on the command line.
 
-```yaml $(tag) == 'package-compute-2017-12'
+``` yaml $(tag) == 'package-compute-2017-12'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2017-12-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2017-12-01/runCommands.json
@@ -1779,7 +1798,7 @@ input-file:
 
 These settings apply only when `--tag=package-compute-only-2017-12` is specified on the command line.
 
-```yaml $(tag) == 'package-compute-only-2017-12'
+``` yaml $(tag) == 'package-compute-only-2017-12'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2017-12-01/compute.json
   - Microsoft.Compute/ComputeRP/stable/2017-12-01/runCommands.json
@@ -1789,7 +1808,7 @@ input-file:
 
 These settings apply only when `--tag=package-skus-2017-09` is specified on the command line.
 
-```yaml $(tag) == 'package-skus-2017-09'
+``` yaml $(tag) == 'package-skus-2017-09'
 input-file:
   - Microsoft.Compute/Skus/stable/2017-09-01/skus.json
 ```
@@ -1798,7 +1817,7 @@ input-file:
 
 These settings apply only when `--tag=package-2017-03` is specified on the command line.
 
-```yaml $(tag) == 'package-2017-03'
+``` yaml $(tag) == 'package-2017-03'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2017-03-30/compute.json
   - Microsoft.Compute/DiskRP/stable/2017-03-30/disk.json
@@ -1810,7 +1829,7 @@ input-file:
 
 These settings apply only when `--tag=package-compute-2017-03` is specified on the command line.
 
-```yaml $(tag) == 'package-compute-2017-03'
+``` yaml $(tag) == 'package-compute-2017-03'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2017-03-30/compute.json
   - Microsoft.Compute/DiskRP/stable/2017-03-30/disk.json
@@ -1821,7 +1840,7 @@ input-file:
 
 These settings apply only when `--tag=package-container-service-2017-01` is specified on the command line.
 
-```yaml $(tag) == 'package-container-service-2017-01'
+``` yaml $(tag) == 'package-container-service-2017-01'
 input-file:
   - Microsoft.ContainerService/stable/2017-01-31/containerService.json
 ```
@@ -1830,7 +1849,7 @@ input-file:
 
 These settings apply only when `--tag=package-container-service-2016-09` is specified on the command line.
 
-```yaml $(tag) == 'package-container-service-2016-09'
+``` yaml $(tag) == 'package-container-service-2016-09'
 input-file:
   - Microsoft.ContainerService/stable/2016-09-30/containerService.json
 ```
@@ -1839,7 +1858,7 @@ input-file:
 
 These settings apply only when `--tag=package-2016-04-preview` is specified on the command line.
 
-```yaml $(tag) == 'package-2016-04-preview'
+``` yaml $(tag) == 'package-2016-04-preview'
 input-file:
   - Microsoft.Compute/ComputeRP/preview/2016-04-30-preview/compute.json
   - Microsoft.Compute/DiskRP/preview/2016-04-30-preview/disk.json
@@ -1850,7 +1869,7 @@ input-file:
 
 These settings apply only when `--tag=package-compute-2016-04-preview` is specified on the command line.
 
-```yaml $(tag) == 'package-compute-2016-04-preview'
+``` yaml $(tag) == 'package-compute-2016-04-preview'
 input-file:
   - Microsoft.Compute/ComputeRP/preview/2016-04-30-preview/compute.json
   - Microsoft.Compute/DiskRP/preview/2016-04-30-preview/disk.json
@@ -1860,7 +1879,7 @@ input-file:
 
 These settings apply only when `--tag=package-2016-03` is specified on the command line.
 
-```yaml $(tag) == 'package-2016-03'
+``` yaml $(tag) == 'package-2016-03'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2016-03-30/compute.json
   - Microsoft.ContainerService/stable/2016-03-30/containerService.json
@@ -1870,7 +1889,7 @@ input-file:
 
 These settings apply only when `--tag=package-compute-2016-03` is specified on the command line.
 
-```yaml $(tag) == 'package-compute-2016-03'
+``` yaml $(tag) == 'package-compute-2016-03'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2016-03-30/compute.json
 ```
@@ -1879,7 +1898,7 @@ input-file:
 
 These settings apply only when `--tag=package-container-service-2016-03` is specified on the command line.
 
-```yaml $(tag) == 'package-container-service-2016-03'
+``` yaml $(tag) == 'package-container-service-2016-03'
 input-file:
   - Microsoft.ContainerService/stable/2016-03-30/containerService.json
 ```
@@ -1888,7 +1907,7 @@ input-file:
 
 These settings apply only when `--tag=package-container-service-2015-11-preview` is specified on the command line.
 
-```yaml $(tag) == 'package-container-service-2015-11-preview'
+``` yaml $(tag) == 'package-container-service-2015-11-preview'
 input-file:
   - Microsoft.ContainerService/preview/2015-11-01-preview/containerService.json
 ```
@@ -1897,7 +1916,7 @@ input-file:
 
 These settings apply only when `--tag=package-compute-2015-06` is specified on the command line.
 
-```yaml $(tag) == 'package-compute-2015-06'
+``` yaml $(tag) == 'package-compute-2015-06'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2015-06-15/compute.json
 ```
@@ -1906,7 +1925,7 @@ input-file:
 
 These settings apply only when `--tag=package-2015-06-preview` is specified on the command line.
 
-```yaml $(tag) == 'package-2015-06-preview'
+``` yaml $(tag) == 'package-2015-06-preview'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2015-06-15/compute.json
   - Microsoft.ContainerService/preview/2015-11-01-preview/containerService.json
@@ -1921,7 +1940,7 @@ input-file:
 This section describes what SDK should be generated by the automatic system.
 This is not used by Autorest itself.
 
-```yaml $(swagger-to-sdk)
+``` yaml $(swagger-to-sdk)
 swagger-to-sdk:
   - repo: azure-sdk-for-net-track2
   - repo: azure-sdk-for-python-track2
@@ -1949,7 +1968,7 @@ See configuration in [readme.java.md](./readme.java.md)
 These settings apply only when `--tag=profile-hybrid-2020-09-01` is specified on the command line.
 Creating this tag to pick proper resources from the hybrid profile.
 
-```yaml $(tag) == 'profile-hybrid-2020-09-01'
+``` yaml $(tag) == 'profile-hybrid-2020-09-01'
 input-file:
   - Microsoft.Compute/ComputeRP/stable/2020-06-01/compute.json
   - Microsoft.Compute/DiskRP/stable/2019-07-01/disk.json
