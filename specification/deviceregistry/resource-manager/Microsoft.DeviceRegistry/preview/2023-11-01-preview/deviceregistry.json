@@ -401,7 +401,7 @@
           {
             "name": "properties",
             "in": "body",
-            "description": "The resource properties to be updated.",
+            "description": "The resource properties to be updated. test",
             "required": true,
             "schema": {
               "$ref": "#/definitions/AssetEndpointProfileUpdate"

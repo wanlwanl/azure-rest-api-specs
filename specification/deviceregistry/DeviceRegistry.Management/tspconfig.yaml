@@ -1,22 +1,15 @@
 emit:
-  - "@azure-tools/typespec-autorest"
+  - "@azure-tools/typespec-ts"
 parameters:
   "service-dir":
     default: "sdk/deviceregistry"
 options:
   "@azure-tools/typespec-autorest":
-    emitter-output-dir: "{project-root}/.."
-    azure-resource-provider-folder: "resource-manager"
-    output-file: "{azure-resource-provider-folder}/{service-name}/{version-status}/{version}/deviceregistry.json"
-    examples-directory: "{project-root}/examples"
-    use-read-only-status-schema: true
-    omit-unreachable-types: true
-  "@azure-tools/typespec-java":
-    package-dir: "azure-resourcemanager-deviceregistry"
-    flavor: "azure"
-    namespace: "com.azure.resourcemanager.deviceregistry"
-    service-name: "Device Registry"
-    examples-directory: "examples"
+    isModularLibrary: true
+    "emitter-output-dir": "{project-root}/generated/typespec-ts"
+    packageDetails:
+      name: "@msinternal/test-js-sdk-release-tool"
+      description: "OpenAI"
 linter:
   extends:
     - "@azure-tools/typespec-azure-rulesets/resource-manager"
