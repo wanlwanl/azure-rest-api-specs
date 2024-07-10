@@ -60,8 +60,10 @@
           "configFilePath": "eng/mgmt/automation/swagger_to_sdk_config.json"
         },
         "azure-sdk-for-js": {
-          "integrationRepository": "azure-sdk/azure-sdk-for-js-pr",
-          "mainRepository": "Azure/azure-sdk-for-js-pr"
+          "integrationRepository": "azure-sdk/azure-sdk-for-js",
+          "mainRepository": "test-repo-billy/azure-sdk-for-js",
+          "mainBranch": "js-sdk-release-tool-test"
+
         },
         "azure-sdk-for-net": {
           "integrationRepository": "azure-sdk/azure-sdk-for-net-pr",
