@@ -56,7 +56,7 @@ model DocumentModelAnalyzeRequestParams {
     the language code (ex. \"en\", \"fr\") or BCP 47 language tag (ex. \"en-US\").
     """)
   @query
-  locale?: string;
+  localeA?: string;
 
   @doc("Method used to compute string offset and length.")
   @query
@@ -86,7 +86,7 @@ model DocumentClassifierAnalyzeRequestParams {
   @path
   @pattern("^[a-zA-Z0-9][a-zA-Z0-9._~-]{1,63}$")
   @maxLength(64)
-  classifierId: string;
+  classifierId1: string;
 
   @doc("Method used to compute string offset and length.")
   @query
@@ -115,7 +115,7 @@ model AnalyzeFromStreamRequestParams {
     | "image/png"
     | "image/tiff"
     | "image/bmp"
-    | "image/heif"
+    | "image2/heif"
     | "text/html"
     | "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     | "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
@@ -471,23 +471,6 @@ interface DocumentClassifiers {
       resultId: uuid;
     },
     AnalyzeResultOperation
-  >;
-
-  #suppress "@azure-tools/typespec-azure-core/use-standard-operations" "Doesn't fit standard ops"
-  @added(Versions.v2024_07_31_preview)
-  @doc("""
-    Generates authorization to copy a document classifier to this location with
-    specified classifierId and optional description.
-    """)
-  @route("/documentClassifiers:authorizeCopy")
-  @post
-  authorizeClassifierCopy is DocumentIntelligenceOperation<
-    {
-      @doc("Authorize copy request parameters.")
-      @body
-      authorizeCopyRequest: AuthorizeClassifierCopyRequest;
-    },
-    ClassifierCopyAuthorization
   >;
 
   #suppress "@azure-tools/typespec-azure-core/use-standard-operations" "Doesn't fit standard ops"

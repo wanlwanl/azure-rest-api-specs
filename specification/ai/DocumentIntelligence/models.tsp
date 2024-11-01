@@ -679,7 +679,7 @@ model DocumentWord {
   @doc("Confidence of correctly extracting the word.")
   @minValue(0)
   @maxValue(1)
-  confidence: float32;
+  confidence: int64;
 }
 
 @doc("""
