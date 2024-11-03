@@ -472,6 +472,23 @@ interface DocumentClassifiers {
     },
     AnalyzeResultOperation
   >;
+  
+  #suppress "@azure-tools/typespec-azure-core/use-standard-operations" "Doesn't fit standard ops"
+  @added(Versions.v2024_07_31_preview)
+  @doc("""
+    Generates authorization to copy a document classifier to this location with
+    specified classifierId and optional description.
+    """)
+  @route("/documentClassifiers:authorizeCopy")
+  @post
+  authorizeClassifierCopy is DocumentIntelligenceOperation<
+    {
+      @doc("Authorize copy request parameters.")
+      @body
+      authorizeCopyRequest: AuthorizeClassifierCopyRequest;
+    },
+    ClassifierCopyAuthorization
+  >;
 
   #suppress "@azure-tools/typespec-azure-core/use-standard-operations" "Doesn't fit standard ops"
   @added(Versions.v2024_07_31_preview)
